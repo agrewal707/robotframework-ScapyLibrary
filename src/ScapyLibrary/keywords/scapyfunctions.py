@@ -20,13 +20,13 @@ class ScapyFunctionWrapper(object):
                     self.keywords[attr] = getattr(scapylib, attr)
 
     def __getattr__(self, item):
-        if item in self.keywords.keys():
+        if item in list(self.keywords.keys()):
             return self.keywords[item]
         else:
             return super(ScapyFunctionWrapper, self).__getattr__(item)
 
     def get_keyword_names(self):
-        return self.keywords.keys()
+        return list(self.keywords.keys())
 
 if __name__ == '__main__':
     s = ScapyFunctionWrapper()

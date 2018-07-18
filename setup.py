@@ -7,7 +7,7 @@ Author: by wang_yang1980@hotmail.com
 from setuptools import setup, find_packages
 
 from os.path import abspath, dirname, join
-execfile(join(dirname(abspath(__file__)), 'src', 'ScapyLibrary', 'version.py'))
+exec(compile(open(join(dirname(abspath(__file__)), 'src', 'ScapyLibrary', 'version.py')).read(), join(dirname(abspath(__file__)), 'src', 'ScapyLibrary', 'version.py'), 'exec'))
 
 
 DESCRIPTION = """

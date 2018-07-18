@@ -30,8 +30,8 @@ try:
     for mod in mods:
         scapylib.load_contrib(mod)
 
-except ImportError, err:
-    print '*WARN*  import scapy failed, please check whether scapy is installed'
+except ImportError as err:
+    print('*WARN*  import scapy failed, please check whether scapy is installed')
     raise err
 finally:
     sys.stdout = STDOUT
