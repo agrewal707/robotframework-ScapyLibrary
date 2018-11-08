@@ -17,7 +17,8 @@ class ScapyFunctionWrapper(object):
         for attr in dir(scapylib):
             if type(getattr(scapylib, attr)) == types.FunctionType:
                 if getattr(scapylib, attr).__doc__ != '' and getattr(scapylib, attr).__doc__ != None:
-                    self.keywords[attr] = getattr(scapylib, attr)
+                    if attr != 'raw':
+                        self.keywords[attr] = getattr(scapylib, attr)
 
     def __getattr__(self, item):
         if item in list(self.keywords.keys()):
